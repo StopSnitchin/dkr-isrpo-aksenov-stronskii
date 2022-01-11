@@ -1,8 +1,21 @@
-let createArr = (length) => {
-    let arr = [];
-    for ( let i = 0; i < length; i++) {
-        arr.push(i);
+class App {
+    constructor() {
+        this.arr = [];
     }
-    return arr;
+
+    createArr(length = 10) {
+        for ( let i = 0; i < length; i++) {
+            this.arr.push(i);
+        }
+    }
+
+    showArr() {
+        console.log(this.arr);
+    }
+
+    changeArr(func) {
+        this.arr = func(this.arr);
+    }
 }
-module.exports = createArr;
+
+module.exports = new App();
